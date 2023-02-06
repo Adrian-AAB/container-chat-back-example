@@ -31,11 +31,8 @@ jobs:
         run: docker login -u "${{ secrets.DOCKER_USER }}" -p "${{ secrets.DOCKER_PASSWORD }}"
       - name: Build
         run: docker build -t back .
-      - name: Tags
-        run: |
-            docker image tag ${{ secrets.DOCKER_USER }}/back:${{ github.sha }}
-            docker image tag ${{ secrets.DOCKER_USER }}/back:latest
-      - name: Push
-        run: |
-            docker push ${{ secrets.DOCKER_USER }} back:${{ github.sha }}
-            docker push ${{ secrets.DOCKER_USER }} back:latest
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          push: true
+          tags: user/back:latest
