@@ -37,8 +37,8 @@ jobs:
         
       - name: Tags
         run: |
-            docker tag nada/back:${{ github.sha }}
-            docker tag nada/back:latest
+            docker tag back nada/back:${{ github.sha }}
+            docker tag back nada/back:latest
       - name: Push
         run: |
             docker push ${{ secrets.DOCKER_USER }} back:${{ github.sha }}
