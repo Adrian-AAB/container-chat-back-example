@@ -40,6 +40,6 @@ jobs:
 
       - name: Push
         run: |
-            docker push adrianaab/back:${{ github.sha }}
-            docker push adrianaab/back:latest
+            docker push docker.io/adrianaab/back:${{ github.sha }}
+            docker push docker.io/adrianaab/back:latest
 
