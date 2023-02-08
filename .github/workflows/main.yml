@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Docker login
-        run: echo docker login -u adrianaab -p "${{ secrets.DOCKER_PASSWORD }}" docker.io
+        run: echo docker login -u adrianaab -p "${{ secrets.DOCKER_PASSWORD }}" 
         
       - name: Build
         run: docker build --no-cache --progress=plain -t back .
@@ -39,5 +39,5 @@ jobs:
 
       - name: Push
         run:
-            echo docker push adrianaab/back:latest
+             docker push adrianaab/back:latest
 
