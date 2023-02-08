@@ -39,5 +39,5 @@ jobs:
 
       - name: Push
         run:
-            docker push adrianaab/back:latest
+            echo docker push adrianaab/back:latest
 
