@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Docker login
-        run: docker login ghcr.io -u "${{ secrets.DOCKER_USER }}" -p  "${{ secrets.DOCKER_PASSWORD }}" --password-stdin
+        run: docker login ghcr.io -u "${{ secrets.DOCKER_USER }}"  --password-stdin
         
       - name: Build
         run: docker build --no-cache --progress=plain -t back .
