@@ -31,22 +31,20 @@ jobs:
             username: "adrianaab"
             password: "A.arias2022"
       - name: Docker login 
-        run: docker login -u "$USERNAME" -p "$PASSWORD"
-        
-      - run: echo "${{ vars.DOCKER_USER }}"
+        run: docker login -u ${{ env.username }} -p ${{ env.password }}
       
       - name: Build
         run: docker build --no-cache --progress=plain -t back .
         
       - name: Tags
         run: |
-            docker tag back "$USERNAME"/back:${{ github.sha }}
-            docker tag back "$USERNAME"/back:latest
+            docker tag back ${{ env.username }}/back:${{ github.sha }}
+            docker tag back ${{ env.username }}/back:latest
 
       - name: Push
         run: | 
-            docker push "$USERNAME"/back:${{ github.sha }}
-            docker push "$USERNAME"/back:latest
+            docker push ${{ env.username }}/back:${{ github.sha }}
+            docker push ${{ env.username }}/back:latest
 
   dump_contexts_to_log:
     runs-on: ubuntu-latest
