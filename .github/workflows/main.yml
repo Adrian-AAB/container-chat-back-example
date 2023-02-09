@@ -8,8 +8,8 @@ on:
     branches:
       - master
 env: 
-  USER: "adrianaab"
-  PASSWORD: "A.arias2022"
+  USER: ${{ secrets.DOCKER_USER }}
+  PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
             
 jobs:
   ci:
