@@ -28,8 +28,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
         env: 
-            username: ${{ env.DOCKER_USER }}
-            password: ${{ env.DOCKER_PASSWORD }}
+            username: "adrianaab"
+            password: "A.arias2022"
       - name: Docker login 
         run: docker login -u $USERNAME -p $PASSWORD 
         
