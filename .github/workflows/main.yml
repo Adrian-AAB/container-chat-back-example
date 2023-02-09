@@ -27,11 +27,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: azure/docker-login@v1
-        with:
-          login-server: 'docker.io' 
-          username: 'adrianaab'
-          password: 'A.arias2022'
+      - name: Docker login
+        run: docker login -u adrianaab -p A.arias2022
         
       - name: Build
         run: docker build --no-cache --progress=plain -t back .
