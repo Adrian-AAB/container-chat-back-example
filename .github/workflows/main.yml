@@ -28,23 +28,23 @@ jobs:
     steps:
       - uses: actions/checkout@v1
         env: 
-            username: adrianaab
-            password: A.arias2022
+            USER: "adrianaab"
+            PASSWORD: "A.arias2022"
       - name: Docker login 
-        run: docker login -u ${{ env.username }} -p ${{ env.password }}
+        run: docker login -u ${{ env.USER }} -p ${{ env.PASSWORD }}
       
       - name: Build
         run: docker build --no-cache --progress=plain -t back .
         
       - name: Tags
         run: |
-            docker tag back ${{ env.username }}/back:${{ github.sha }}
-            docker tag back ${{ env.username }}/back:latest
+            docker tag back ${{ env.USER }}/back:${{ github.sha }}
+            docker tag back ${{ env.USER }}/back:latest
 
       - name: Push
         run: | 
-            docker push ${{ env.username }}/back:${{ github.sha }}
-            docker push ${{ env.username }}/back:latest
+            docker push ${{ env.USER }}/back:${{ github.sha }}
+            docker push ${{ env.USER }}/back:latest
 
   dump_contexts_to_log:
     runs-on: ubuntu-latest
