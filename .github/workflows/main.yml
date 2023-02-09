@@ -31,7 +31,7 @@ jobs:
             username: "adrianaab"
             password: "A.arias2022"
       - name: Docker login 
-        run: docker login -u ${ USERNAME } -p ${ PASSWORD }
+        run: docker login -u "$USERNAME" -p "$PASSWORD"
         
       - name: Build
         run: docker build --no-cache --progress=plain -t back .
