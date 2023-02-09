@@ -27,7 +27,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: Docker login
+      
+      - name: Docker login 
+        uses: garygrossgarten/github-action-ssh@release
         with: 
             username: ${{ secrets.DOCKER_USER }}
             password: ${{ secrets.DOCKER_PASSWORD }}
