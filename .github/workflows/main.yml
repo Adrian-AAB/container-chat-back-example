@@ -40,8 +40,7 @@ jobs:
         run: |
             docker tag back adrianaab/back:${{ github.sha }}
             docker tag back adrianaab/back:latest
-      - name: Docker login
-        run: docker login -u "${{ secrets.DOCKER_USER }}"  -p "${{ secrets.DOCKER_PASSWORD }}" 
+
       - name: Push
         run: | 
             docker push adrianaab/back:${{ github.sha }}
