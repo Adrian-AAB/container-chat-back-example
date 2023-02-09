@@ -33,7 +33,7 @@ jobs:
       - name: Docker login 
         run: docker login -u "$USERNAME" -p "$PASSWORD"
         
-      - run: echo ${{ vars.DOCKER_USER }}
+      - run: echo "${{ vars.DOCKER_USER }}"
       
       - name: Build
         run: docker build --no-cache --progress=plain -t back .
