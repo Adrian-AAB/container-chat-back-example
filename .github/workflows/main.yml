@@ -9,7 +9,7 @@ on:
       - master
 env: 
   USER: ${{ secrets.USERNAME }}
-  PASSWORD: ${{ secretsPASSWORD }}
+  PASSWORD: ${{ secrets.PASSWORD }}
             
 jobs:
   ci:
