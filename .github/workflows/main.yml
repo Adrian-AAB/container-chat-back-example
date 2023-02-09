@@ -27,9 +27,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-        with: 
-            username: ${{ secrets.DOCKER_USER }}
-            password: ${{ secrets.DOCKER_PASSWORD }}
+        env: 
+            username: ${{ env.DOCKER_USER }}
+            password: ${{ env.DOCKER_PASSWORD }}
       - name: Docker login 
         run: docker login -u $USERNAME -p $PASSWORD 
         
